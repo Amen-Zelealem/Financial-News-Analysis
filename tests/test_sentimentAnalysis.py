@@ -16,8 +16,8 @@ class TestSentimentAnalyzer(unittest.TestCase):
         ])
 
     def test_preprocess_text(self):
-        text = "Hello, World! This is a test sentence."
-        expected_output = "hello world test sentence"
+        text = "Hello, 10 Academy! Glad to Join the KAIM."
+        expected_output = "Glad to Join the KAIM"
         self.assertEqual(SentimentAnalyzer.preprocess_text(text), expected_output)
 
     def test_analyze_sentiment(self):
