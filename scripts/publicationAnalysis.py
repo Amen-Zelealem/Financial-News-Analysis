@@ -13,6 +13,8 @@ def analyze_annual_trends(data: pd.DataFrame) -> pd.DataFrame:
     Returns:
     - pd.DataFrame: Yearly article counts.
     """
+    # Remove timezone information from 'date' before grouping
+    data['date'] = data['date'].dt.tz_localize(None)
     # Group by year and count articles
     annual_counts = data.groupby(data['date'].dt.to_period('Y')).size().reset_index(name='no_of_articles')
     annual_counts['date'] = annual_counts['date'].dt.to_timestamp()
@@ -28,6 +30,8 @@ def analyze_quarterly_trends(data: pd.DataFrame) -> pd.DataFrame:
     Returns:
     - pd.DataFrame: Quarterly article counts.
     """
+    # Remove timezone information from 'date' before grouping
+    data['date'] = data['date'].dt.tz_localize(None)
     # Group by quarter and count articles
     quarterly_counts = data.groupby(data['date'].dt.to_period('Q')).size().reset_index(name='no_of_articles')
     quarterly_counts['date'] = quarterly_counts['date'].dt.to_timestamp()
