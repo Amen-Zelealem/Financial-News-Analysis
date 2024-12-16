@@ -132,3 +132,61 @@ class SentimentAnalyzer:
         
         word_freq = Counter(dict(common_keywords))  # Convert common keywords to a Counter
         SentimentAnalyzer.plot_wordcloud(word_freq)  # Plot the word cloud
+
+    def calculate_sentiment(df):
+        """
+        Calculate daily average sentiment scores.
+
+        Parameters:
+        - df (pd.DataFrame): DataFrame with sentiment columns and multi-index (Date, stock).
+
+        Returns:
+        - pd.DataFrame: DataFrame with daily average sentiment scores for each stock.
+        """
+        # Define sentiment columns
+        sentiment_cols = ['neg', 'neu', 'pos']
+        
+        # Group by Date and stock, then compute mean of sentiment columns
+        daily_sentiment = df.groupby(level=['Date', 'stock'])[sentiment_cols].mean().reset_index()
+        
+        return daily_sentiment
+
+def plot_sentiment(daily_sentiment, stock):
+        """
+        Plot sentiment scores for a given stock.
+
+        Parameters:
+        - daily_sentiment (pd.DataFrame): DataFrame with daily sentiment scores.
+        - stock (str): The stock symbol for which to plot sentiment scores.
+
+        Returns:
+        - plt.Figure: Matplotlib figure object.
+        """
+        # Filter data for the selected stock
+        stock_data = daily_sentiment[daily_sentiment['stock'] == stock]
+        
+        # Create figure and axis
+        fig, ax = plt.subplots(figsize=(12, 6))
+        
+        # Plot sentiment scores
+        ax.plot(stock_data['Date'], stock_data['neg'], label='Negative Sentiment', color='red')
+        ax.plot(stock_data['Date'], stock_data['neu'], label='Neutral Sentiment', color='grey')
+        ax.plot(stock_data['Date'], stock_data['pos'], label='Positive Sentiment', color='green')
+        # ax.plot(stock_data['Date'], stock_data['compound'], label='Compound Sentiment', color='blue')
+        
+        # Set plot title and labels
+        ax.set_title(f'Daily Sentiment Scores for {stock}')
+        ax.set_xlabel('Date')
+        ax.set_ylabel('Sentiment Score')
+        
+        # Add legend and grid
+        ax.legend()
+        ax.grid(True)
+        
+        # Rotate x-axis labels for readability
+        plt.xticks(rotation=45)
+        
+        # Adjust layout
+        plt.tight_layout()
+        
+        return fig
