@@ -1,9 +1,8 @@
-# Financial Analysis Project Interim Report 
+# Financial Analysis Report 
 
 ## Overview
 
-The **Financial Analysis Project** aims to analyze a large corpus of financial news data to uncover correlations between news sentiment and stock market movements. This initiative is designed to refine skills in Data Engineering (DE), Financial Analytics (FA), and Machine Learning Engineering (MLE). The project not only deepens the understanding of essential financial analytic techniques but also simulates the pressures and deadlines typical in the financial analytics field.
-
+The **Financial Analysis** Project aims to analyze a large corpus of financial news data to uncover correlations between news sentiment and stock market movements. This initiative is designed to refine skills in Data Engineering (DE), Financial Analytics (FA), and Machine Learning Engineering (MLE). The project not only deepens the understanding of essential financial analytic techniques but also simulates the pressures and deadlines typical in the financial analytics field.
 ## Business Objective
 
 Nova Financial Solutions seeks to enhance its predictive analytics capabilities to significantly boost its financial forecasting accuracy and operational efficiency through advanced data analysis. As a Data Analyst, the primary focus is on:
@@ -40,21 +39,12 @@ The **Financial News and Stock Price Integration Dataset (FNSPID)** combines qua
 4. **Quantitative Analysis**
    - Employed libraries such as **pynance** and **TaLib** for quantitative analysis.
 
-### Impact of Completed Tasks
+5. **Correlation Analysis**
+   - Established links between sentiment scores and stock price movements, providing a comprehensive understanding of these dynamics.
 
-The completion of these tasks has provided valuable insights into the dataset, allowing for a better understanding of how news sentiment correlates with stock movements. This foundation is crucial for developing actionable investment strategies.
-
-## Ongoing Tasks
-
-- **Correlation Analysis**: Establishing links between sentiment scores and stock price movements.
-- **Time Series Analysis**: Investigating publication frequency over time and its correlation with market events.
-
-## Next Steps
-
-1. **Complete Correlation Analysis**: Analyze how sentiment affects stock price changes over time.
-2. **Develop Predictive Models**: Use insights from the sentiment analysis to formulate investment strategies and predictive models.
-3. **Prepare Final Report**: Summarize findings and recommendations based on the comprehensive analysis.
+6. **Time Series Analysis**
+   - Investigated publication frequency over time and its correlation with market events.
 
 ## Conclusion
 
-This project serves as a rigorous exercise in financial analytics, equipping participants with essential skills and insights to navigate the complex interplay between news sentiment and stock market dynamics.
+All tasks outlined in the project have been successfully completed. This project serves as a rigorous exercise in financial analytics, equipping participants with essential skills and insights to navigate the complex interplay between news sentiment and stock market dynamics. The comprehensive analysis will inform future predictive modeling and investment strategies.
