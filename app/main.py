@@ -9,7 +9,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "s
 # Import functions from custom scripts
 from stockAnalysis import load_data, plot_stock_data, plot_rsi, plot_macd
 from sentimentAnalysis import SentimentAnalyzer as sa  # For sentiment analysis
-
+from sentimentAnalysis import plot_sentiment
 
 # Helper function to construct file paths
 def get_file_path(folder_name, file_name):
@@ -58,6 +58,8 @@ def main():
             fig = plot_rsi(selected_stock, df)
         elif indicator == "MACD":
             fig = plot_macd(selected_stock, df)
+        elif indicator == "Daily Sentiment":
+            fig = plot_sentiment(daily_sentiment, selected_stock)
         elif indicator == "Daily Sentiment":
             fig = sa.plot_sentiment(daily_sentiment, selected_stock)
         st.pyplot(fig)
